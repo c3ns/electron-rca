@@ -1,0 +1,36 @@
+{
+  "name": "cra-electron",
+  "version": "0.0.1",
+  "description": "Create-react-app electron starter",
+  "main": "public/electron.js",
+  "dependencies": {
+    "electron-is-dev": "^1.0.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start:react": "cross-env BROWSER=none react-scripts start",
+    "start": "concurrently \"npm run start:react\" \"wait-on http://localhost:3000/ && electron .\"",
+    "build:react": "react-scripts build",
+    "build:electron": "electron-builder",
+    "build": "npm run build:react && npm run build:electron",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "electron": "^3.0.0-beta.7",
+    "electron-builder": "^20.28.3",
+    "electron-devtools-installer": "^2.2.4",
+    "wait-on": "^2.1.0"
+  },
+  "homepage": "./",
+  "build": {
+    "appId": "com.electron.foobar",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    }
+  }
+}
