@@ -1,4 +1,4 @@
-# Create-react-app electron 🦄
+# Create-react-app electron
 
 ## Usage
 
